@@ -123,8 +123,18 @@ export default function fruitsReducer(state = initialState, action){
       break;
     }
     case "DEDUCT_FROM_STOCK":{
-      //console.log(action.payload);
-      return state;
+      
+      return Object.assign({},state,{
+        fruits: state.fruits.map((fruit, index) => {
+          if(index === action.payload.id){
+            return Object.assign({}, fruit, {
+              quantityRemaining: fruit.quantityRemaining - action.payload.quanity,
+              quanity: 0
+            })
+          }
+          return fruit
+        })
+      });
       break;
     }
     case "RECEIVE_FRUITS":{

@@ -62,10 +62,10 @@ export function decrementQuanity(id){
     payload: id
   }
 }
-//Not sure what to do here
-export function deductFormStock(obj){
+
+export function deductFormStock(id, quanity){
   return {
     type: "DEDUCT_FROM_STOCK",
-    payload: obj
+    payload: {"id": id,"quanity": quanity}
   }
 }

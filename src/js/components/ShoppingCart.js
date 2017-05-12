@@ -39,16 +39,11 @@ export default class ShoppingCart extends React.Component{
   }
   
   purchase(){
-    let obj = [];
-    
-    for(var fruit in this.props.fruits){
-      console.log(fruit.id);
-      if(fruit.inCart){
-        obj.push(fruit.id);
+    for(let i=0; i<this.props.fruits.length; i++){
+      if(this.props.fruits[i].inCart){
+        this.props.dispatch(deductFormStock(this.props.fruits[i].id,this.props.fruits[i].quanity));
       }
     }
-    //console.log(obj);
-    this.props.dispatch(deductFormStock(obj));
     this.props.dispatch(removeAllItems());
   }
   
