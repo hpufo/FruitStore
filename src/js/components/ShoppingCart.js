@@ -32,7 +32,7 @@ export default class ShoppingCart extends React.Component{
     
     for(let i=0; i<this.props.fruits.length; i++)
       if(this.props.fruits[i].inCart){
-        sum += this.props.fruits[i].price * this.props.fruits[i].quanity;
+        sum += this.props.fruits[i].price * this.props.fruits[i].quantity;
       }
     
     return <label id="total">Total: ${sum}</label>
@@ -41,7 +41,7 @@ export default class ShoppingCart extends React.Component{
   purchase(){
     for(let i=0; i<this.props.fruits.length; i++){
       if(this.props.fruits[i].inCart){
-        this.props.dispatch(deductFormStock(this.props.fruits[i].id,this.props.fruits[i].quanity));
+        this.props.dispatch(deductFormStock(this.props.fruits[i].id,this.props.fruits[i].quantity));
       }
     }
     this.props.dispatch(removeAllItems());

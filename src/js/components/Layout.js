@@ -17,13 +17,11 @@ export default class Layout extends React.Component{
   renderItems(){
     //should put div=shop into it's own conponent
     return this.props.fruits.map((item,i) => {
-       //return <Item item={{item} key={i} />
        return <Item itemID={item.id} key={i} />
     });
   }
   
   render(){
-    //console.log(this.props.fruits);
     return (
     <div>
       <h1>Fruit</h1>

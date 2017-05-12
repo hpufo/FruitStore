@@ -13,7 +13,6 @@ export default class Item extends React.Component{
   }
   
   render(){
-    //Can also use this.props.item... if I uncomment in layout
     return (
       <div className="ShopItem">
         <img src={this.props.fruits[this.props.itemID].imgSrc} className="shopImg" />

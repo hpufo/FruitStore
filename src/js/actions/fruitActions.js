@@ -4,24 +4,6 @@ export function fetchFruits(){
   return function(dispatch){
     axios.get("./store_items.json").then((response) => {
       dispatch({type: "RECEIVE_FRUITS", payload: response.data})
-      /*dispatch({type: "DEDUCT", payload: {
-      0: {
-        "id": 0,
-        "itemName": "banana",
-        "deduct": 1
-      },
-      1: {
-        "id": 1,
-        "itemName": "apple",
-        "deduct": 1
-      },
-      5: {
-        "id": 5,
-        "itemName": "strawberries",
-        "deduct": 1
-      }
-    }
-    })//*/
     })
     .catch((err) => {
       dispatch({type: "FETCH_FRUITS_ERROR", payload: err})
@@ -49,23 +31,23 @@ export function removeAllItems(){
   }
 }
 
-export function incrementQuanity(id){
+export function incrementquantity(id){
   return {
-    type: "INCREMENT_QUANITY",
+    type: "INCREMENT_quantity",
     payload: id,
   }
 }
 
-export function decrementQuanity(id){
+export function decrementquantity(id){
   return {
-    type: "DECREMENT_QUANITY",
+    type: "DECREMENT_quantity",
     payload: id
   }
 }
 
-export function deductFormStock(id, quanity){
+export function deductFormStock(id, quantity){
   return {
     type: "DEDUCT_FROM_STOCK",
-    payload: {"id": id,"quanity": quanity}
+    payload: {"id": id,"quantity": quantity}
   }
 }
