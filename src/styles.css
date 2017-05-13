@@ -15,6 +15,11 @@ img{
   margin-left: calc(50% - 725px);
   text-align: center;
 }
+@media screen and (max-width: 1470px) {
+  #tab{ 
+    margin-left: 0px;
+  }
+}
 #cartHeadLabel{
   margin-bottom: 0px;
   font-weight: 900;
