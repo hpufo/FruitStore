@@ -35,7 +35,7 @@ export default class ShoppingCart extends React.Component{
         sum += this.props.fruits[i].price * this.props.fruits[i].quantity;
       }
     
-    return <label id="total">Total: ${sum}</label>
+    return <label id="total">Total: ${sum.toFixed(2)}</label>
   }
   
   purchase(){

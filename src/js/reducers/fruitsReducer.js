@@ -49,7 +49,7 @@ export default function fruitsReducer(state = initialState, action){
       });
       break;
     }
-    case "INCREMENT_quantity":{
+    case "INCREMENT_QUANTITY":{
       return Object.assign({},state,{
         fruits: state.fruits.map((fruit, index) => {
           if(index === action.payload){
@@ -65,7 +65,7 @@ export default function fruitsReducer(state = initialState, action){
       });
       break;
     }
-    case "DECREMENT_quantity":{
+    case "DECREMENT_QUANTITY":{
       return Object.assign({},state,{
         fruits: state.fruits.map((fruit, index) => {
           if(index === action.payload){
@@ -106,6 +106,18 @@ export default function fruitsReducer(state = initialState, action){
       });
       return {...state, fetching: false, fetched: true, fruits: fruits};
       break;
+    }
+    case "IMG_FAILED_TO_LOAD":{
+      return Object.assign({},state,{
+        fruits: state.fruits.map((fruit, index) => {
+          if(index === action.payload){
+            return Object.assign({}, fruit, {
+              imgSrc: "./no-image.png"
+            })
+          }
+          return fruit
+        })
+      });
     }
     case "FETCH_FRUITS_ERROR":{
      return {...state, fetching: false, error: action.payload};

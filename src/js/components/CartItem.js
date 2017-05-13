@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { removeItem, incrementquantity, decrementquantity } from '../actions/fruitActions';
+import { removeItem, incrementquantity, decrementquantity, imgFailed } from '../actions/fruitActions';
 
 @connect((store) =>{
   return {
@@ -20,11 +20,15 @@ export default class CartItem extends React.Component{
     this.props.dispatch(removeItem(this.props.itemID));
   }
   
+  usePlaceholder(){
+    this.props.dispatch(imgFailed(this.props.itemID));
+  }
+  
   render(){
     return (
     <div className="cartItem">
       <div className="topHalf">
-        <img src={this.props.fruits[this.props.itemID].imgSrc} className="cartImg" width="80" height="60" />
+        <img src={this.props.fruits[this.props.itemID].imgSrc} className="cartImg" width="80" height="60" onError={this.usePlaceholder.bind(this)} />
         <div className="quantity">
           <input type="button" value="-" className="countBtn" onClick={this.decrement.bind(this)} />
           <label className="count">{this.props.fruits[this.props.itemID].quantity}</label>
@@ -32,7 +36,7 @@ export default class CartItem extends React.Component{
         </div>
       </div>
       <div className="bottomHalf">
-        <label>@ ${this.props.fruits[this.props.itemID].price}each = ${this.props.fruits[this.props.itemID].price * this.props.fruits[this.props.itemID].quantity}</label>
+        <label>@ ${this.props.fruits[this.props.itemID].price}each = ${(this.props.fruits[this.props.itemID].price * this.props.fruits[this.props.itemID].quantity).toFixed(2)}</label>
         <input type="button" value="Delete" className="deleteBtn" onClick={this.removeFromCart.bind(this)} />
       </div>
     </div>

@@ -33,14 +33,14 @@ export function removeAllItems(){
 
 export function incrementquantity(id){
   return {
-    type: "INCREMENT_quantity",
+    type: "INCREMENT_QUANTITY",
     payload: id,
   }
 }
 
 export function decrementquantity(id){
   return {
-    type: "DECREMENT_quantity",
+    type: "DECREMENT_QUANTITY",
     payload: id
   }
 }
@@ -49,5 +49,13 @@ export function deductFormStock(id, quantity){
   return {
     type: "DEDUCT_FROM_STOCK",
     payload: {"id": id,"quantity": quantity}
+  }
+}
+
+export function imgFailed(id){
+  console.log("heh");
+  return {
+    type: "IMG_FAILED_TO_LOAD",
+    payload: id
   }
 }
