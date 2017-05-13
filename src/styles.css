@@ -43,7 +43,10 @@ hr{
 }
 .fruitName{
  display: block;
-font-weight: bold; 
+ font-weight: bold;
+ overflow: hidden;
+ white-space: nowrap;
+ text-overflow: ellipsis;
 }
 .price{
   font-size: -webkit-xxx-large;
@@ -64,7 +67,7 @@ font-weight: bold;
   border-radius: 10px;
 }
 .cartItem{
-  height: 95px;
+  height: 85px;
   background-color: #6FD9B5;
   margin-bottom: 15px;
   padding: 10px 10px 10px 25px;
@@ -142,6 +145,7 @@ font-weight: bold;
   border: none;
   color: white;
   margin: 0px;
+  padding: 0;
   background-color: transparent;
 }
 #purchaseBtn{
@@ -159,6 +163,10 @@ font-weight: bold;
 #cartBottom{
   float: right;
   margin-right: 15px;
+}
+#cartBottom > * {
+  float: right;
+  clear: right;
 }
 #container{
   border-top: 5px solid #32C996;
