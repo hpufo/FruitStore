@@ -20,7 +20,7 @@ h2{
   font-weight: 900;
 }
 h4{
-  margin: 0px;
+  margin: 0px 0px 5px 0px;
   font-weight: 100;
 }
 hr{
@@ -43,10 +43,12 @@ hr{
 }
 .fruitName{
  display: block;
- font-weight: bold;
+ /*font-weight: bold;*/
+ font-size: larger;
  overflow: hidden;
  white-space: nowrap;
  text-overflow: ellipsis;
+ text-transform: capitalize;
 }
 .price{
   font-size: -webkit-xxx-large;
