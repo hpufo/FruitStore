@@ -2,9 +2,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { removeItem, incrementquantity, decrementquantity, imgFailed } from '../actions/fruitActions';
 
-@connect((store) =>{
+@connect((store, ownProps) =>{
   return {
-    fruits: store.fruits.fruits
+    fruit: store.fruits.fruits[ownProps.itemID]
   };
 })
 export default class CartItem extends React.Component{
@@ -28,15 +28,15 @@ export default class CartItem extends React.Component{
     return (
     <div className="cartItem">
       <div className="topHalf">
-        <img src={this.props.fruits[this.props.itemID].imgSrc} className="cartImg" width="80" height="60" onError={this.usePlaceholder.bind(this)} />
+        <img src={this.props.fruit.imgSrc} className="cartImg" width="80" height="60" onError={this.usePlaceholder.bind(this)} />
         <div className="quantity">
           <input type="button" value="-" className="countBtn" onClick={this.decrement.bind(this)} />
-          <label className="count">{this.props.fruits[this.props.itemID].quantity}</label>
+          <label className="count">{this.props.fruit.quantity}</label>
           <input type="button" value="+" className="countBtn" onClick={this.increment.bind(this)} />
         </div>
       </div>
       <div className="bottomHalf">
-        <label>@ ${this.props.fruits[this.props.itemID].price}each = ${(this.props.fruits[this.props.itemID].price * this.props.fruits[this.props.itemID].quantity).toFixed(2)}</label>
+        <label>@ ${this.props.fruit.price}each = ${(this.props.fruit.price * this.props.fruit.quantity).toFixed(2)}</label>
         <input type="button" value="Delete" className="deleteBtn" onClick={this.removeFromCart.bind(this)} />
       </div>
     </div>
