@@ -53,7 +53,6 @@ export function deductFormStock(id, quantity){
 }
 
 export function imgFailed(id){
-  console.log("heh");
   return {
     type: "IMG_FAILED_TO_LOAD",
     payload: id

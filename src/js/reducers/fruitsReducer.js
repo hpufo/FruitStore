@@ -25,7 +25,6 @@ export default function fruitsReducer(state = initialState, action){
       break;
     }
     case "REMOVE_ITEM": {
-      //Maybe try to reuse function from above?
       return Object.assign({},state,{
         fruits: state.fruits.map((fruit, index) => {
           if(index === action.payload){

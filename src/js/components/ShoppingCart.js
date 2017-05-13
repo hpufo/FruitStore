@@ -16,7 +16,7 @@ export default class ShoppingCart extends React.Component{
       }
     });
   }
-  //Maybe move to another componenet
+  
   getCartCount(){
     let count = 0;
     
@@ -26,7 +26,7 @@ export default class ShoppingCart extends React.Component{
     
     return <h4>{count} items</h4>;
   }
-  //Same as above
+  
   getTotalCost(){
     let sum = 0;
     
