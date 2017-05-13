@@ -6,24 +6,24 @@ img{
   max-width: 100%;
   height: auto;
 }
-h1{
+#tab{
   background-color: #32C996;
   color: white;
   width: 210px;
   font-family: sans-serif;
   margin-bottom: 0px;
-  margin-left: 60px;
+  margin-left: calc(50% - 725px);
   text-align: center;
 }
-h2{
+#cartHeadLabel{
   margin-bottom: 0px;
   font-weight: 900;
 }
-h4{
+#cartCount{
   margin: 0px 0px 5px 0px;
   font-weight: 100;
 }
-hr{
+#shortLine{
   border: 0;
   height: 2px;
   background: white;
@@ -43,7 +43,7 @@ hr{
 }
 .fruitName{
  display: block;
- /*font-weight: bold;*/
+ /*font-weight: bold; /* I like it better bold*/
  font-size: larger;
  overflow: hidden;
  white-space: nowrap;
@@ -91,8 +91,6 @@ hr{
   font-size: x-large;
 }
 .countBtn{
-  /*width: 20px;
-  height: 17px;*/
   font-size: large;
   padding-top: 0px;
   padding-bottom: 0px;
@@ -117,10 +115,11 @@ hr{
   background-color: transparent;
 }
 #mainContent{
-  width: 1450px;
+  width: 50%;
+  margin: 0 auto;
+  min-width: 1450px;
   min-height: 800px;
   display: flex;
-  margin: 0px 60px 0px 60px;
 }
 #shop{
   padding-bottom: 50px;

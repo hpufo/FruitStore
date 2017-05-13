@@ -24,7 +24,7 @@ export default class ShoppingCart extends React.Component{
       if(this.props.fruits[i].inCart) 
         count++;
     
-    return <h4>{count} items</h4>;
+    return <h4 id="cartCount">{count} items</h4>;
   }
   
   getTotalCost(){
@@ -55,13 +55,13 @@ export default class ShoppingCart extends React.Component{
     return (
     <div id="shoppingCart">
       <div id="shoppingHead">
-        <h2>Shopping Cart</h2>
+        <h2 id="cartHeadLabel">Shopping Cart</h2>
         {this.getCartCount()}
       </div>
       <div id="cart">
       {this.getCartItems()}
       </div>
-      <hr />
+      <hr id="shortLine" />
       <div id="cartBottom">
         {this.getTotalCost()}
         <input type="button" value="Empty Cart" id="emptyCartBtn" onClick={this.clearCart.bind(this)} />

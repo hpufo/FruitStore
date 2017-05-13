@@ -6,7 +6,7 @@ export default class Layout extends React.Component{
   render(){
     return (
     <div>
-      <h1>Fruit</h1>
+      <h1 id="tab">Fruit</h1>
       <div id="container">
         <div id="mainContent">
           <Shop />
