@@ -111,7 +111,7 @@ export default function fruitsReducer(state = initialState, action){
         fruits: state.fruits.map((fruit, index) => {                                    //For each element in the State.fruits array apply this function to it
           if(index === action.payload){                                                 //If the fruit's id matches the one from the action payload
             return Object.assign({}, fruit, {                                           //Returns a new object containing the updated fruit element
-              imgSrc: "./no-image.png"                                                  //changes the imgSrc to be the placeholder image
+              imgSrc: "/images/no-image.png"                                                  //changes the imgSrc to be the placeholder image
             })
           }
           return fruit                                                                  //Return the unmodified fruits

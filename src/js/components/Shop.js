@@ -17,7 +17,7 @@ export default class Shop extends React.Component{
   
   renderItems(){
     if(this.props.fruits.length == 0)                                     //If the fruits array is empty
-      return <img src="./emptyShop.jpg" alt="fruits array was empty" />   //Show a pic of an empty store
+      return <img src="/images/emptyShop.jpg" alt="fruits array was empty" />   //Show a pic of an empty store
     else{                                                                 //Else return all of the items in the fruits array
       return this.props.fruits.map((item,i) => {
          return <Item itemID={item.id} key={i} />
