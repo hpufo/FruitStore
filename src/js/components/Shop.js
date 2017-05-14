@@ -9,14 +9,20 @@ import { fetchFruits } from '../actions/fruitActions';
   };
 })
 export default class Shop extends React.Component{
+  /* Dispatch an action to get the fruits from the JSON file before this component is rendered
+  */
   componentWillMount(){
     this.props.dispatch(fetchFruits());
   }
   
   renderItems(){
-    return this.props.fruits.map((item,i) => {
-       return <Item itemID={item.id} key={i} />
-    });
+    if(this.props.fruits.length == 0)                                     //If the fruits array is empty
+      return <img src="./emptyShop.jpg" alt="fruits array was empty" />   //Show a pic of an empty store
+    else{                                                                 //Else return all of the items in the fruits array
+      return this.props.fruits.map((item,i) => {
+         return <Item itemID={item.id} key={i} />
+      });
+    }
   }
   
   render(){
