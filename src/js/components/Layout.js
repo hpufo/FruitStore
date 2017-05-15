@@ -14,7 +14,7 @@ export default class Layout extends React.Component{
       return <p>JSON file failed to load</p>;   //Print a simple error message
     else{                                       //Else return the layout    
       return (
-        <div>
+        <div id="layout">
           <h1 id="tab">Fruit</h1>
           <div id="container">
             <div id="mainContent">
