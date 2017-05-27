@@ -13,7 +13,6 @@ img{
   width: 210px;
   font-family: sans-serif;
   margin-bottom: 0px;
-  margin-top: 0px;                     /*I think the app looks better with a top margin*/
   margin-left: calc(50% - 725px);       /*Math to calc where the tab should be. 725 is half the min width of the main content*/
   text-align: center;
 }
@@ -51,7 +50,7 @@ img{
 }
 .fruitName{
  display: block;
- /*font-weight: bold; /* I like it better bold*/
+ font-weight: bold;
  font-size: larger;
  overflow: hidden;
  white-space: nowrap;
