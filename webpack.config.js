@@ -1,15 +1,15 @@
 var debug = process.env.NODE_ENV !== "production";
 var webpack = require('webpack');
-var path = require('path');
+var path = require('path');       //Node package
 
 module.exports = {
   context: path.join(__dirname, "src"),
   devtool: debug ? "inline-sourcemap" : null,
-  entry: "./js/app.js",
-  module: {
+  entry: "./js/app.js",                         //Entry point of our app
+  module: {                                     //module: For imports like loaders
     loaders: [
       {
-        test: /\.jsx?$/,
+        test: /\.jsx?$/,                              //test: regex for what files to transpile
         exclude: /(node_modules|bower_components)/,
         loader: 'babel-loader',
         query: {
@@ -20,8 +20,9 @@ module.exports = {
     ]
   },
   output: {
-    path: __dirname + "/src/",
-    filename: "app.min.js"
+    //__dirname from path, it is the current dir.
+    path: __dirname + "/src/",    //path: where to put the output file
+    filename: "app.min.js"        //Name of the output file
   },
   plugins: debug ? [] : [
     new webpack.optimize.DedupePlugin(),
