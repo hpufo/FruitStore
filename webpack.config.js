@@ -9,8 +9,8 @@ module.exports = {
   module: {                                     //module: For imports like loaders
     loaders: [
       {
-        test: /\.jsx?$/,                              //test: regex for what files to transpile
-        exclude: /(node_modules|bower_components)/,
+        test: /\.jsx?$/,                              //test: regex for what files to transpile. Looks for js or jsx files
+        exclude: /(node_modules|bower_components)/,   //exclude: dirs you don't want webpack to search for files to transpile
         loader: 'babel-loader',
         query: {
           presets: ['react', 'es2015', 'stage-0'],
