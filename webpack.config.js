@@ -21,7 +21,8 @@ module.exports = {
   },
   output: {
     //__dirname from path, it is the current dir.
-    path: __dirname + "/src/",    //path: where to put the output file
+    path: __dirname + "/build/",    //path: where to put the output file
+    path: __dirname + "/build/",    //path: where to put the output file
     filename: "app.min.js"        //Name of the output file
   },
   plugins: debug ? [] : [
