@@ -10,10 +10,10 @@ module.exports = {
     loaders: [
       {
         test: /\.jsx?$/,                              //test: regex for what files to transpile. Looks for js or jsx files
-        exclude: /(node_modules|bower_components)/,   //exclude: dirs you don't want webpack to search for files to transpile
+        exclude: /(node_modules)/,   //exclude: dirs you don't want webpack to search for files to transpile
         loader: 'babel-loader',
         query: {
-          presets: ['react', 'es2015', 'stage-0'],
+          presets: [['es2015', { modules: false }], 'react', 'stage-0'],
           plugins: ['react-html-attrs', 'transform-class-properties', 'transform-decorators-legacy'],
         }
       }
@@ -24,9 +24,15 @@ module.exports = {
     path: __dirname + "/build/",    //path: where to put the output file
     filename: "app.min.js"        //Name of the output file
   },
-  plugins: debug ? [] : [
-    new webpack.optimize.DedupePlugin(),
-    new webpack.optimize.OccurenceOrderPlugin(),
-    new webpack.optimize.UglifyJsPlugin({ mangle: false, sourcemap: false }),
+  plugins: [
+    new webpack.LoaderOptionsPlugin({minimize: true, debug: false}),
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': JSON.stringify('production')
+      }
+    }),
+    new webpack.optimize.OccurrenceOrderPlugin(true),
+    new webpack.optimize.ModuleConcatenationPlugin(),
+    new webpack.optimize.UglifyJsPlugin(),
   ],
 };
