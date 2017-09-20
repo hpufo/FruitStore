@@ -24,7 +24,7 @@ module.exports = {
     path: __dirname + "/build/",    //path: where to put the output file
     filename: "app.min.js"        //Name of the output file
   },
-  plugins: [
+  plugins: debug ? [] : [
     new webpack.LoaderOptionsPlugin({minimize: true, debug: false}),
     new webpack.DefinePlugin({
       'process.env': {
