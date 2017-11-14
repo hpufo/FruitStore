@@ -6,6 +6,7 @@ React,
 Redux,
 Redux-thunk,
 Axios,
+Webpack,
 CSJS(For CSS in JS)
 
 Useful commands:
