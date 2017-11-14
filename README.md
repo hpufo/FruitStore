@@ -1,5 +1,5 @@
 # FruitStore
-A fruit store built using React and Redux. The app get's it's stock from a json file.
+A fruit store that gets it's data from a json file.
 
 Technologies used:
 React,
