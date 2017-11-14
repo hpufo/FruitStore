@@ -1,8 +1,14 @@
 import React from 'react';
+import csjs from 'react-csjs';
 import { connect } from 'react-redux';
 import Item from './Item';
 import { fetchFruits } from '../actions/fruitActions';
 
+@csjs`
+.shop{
+  height: 100%;
+}
+`
 @connect((store) =>{
   return {
     fruits: store.fruits.fruits
@@ -27,7 +33,7 @@ export default class Shop extends React.Component{
   
   render(){
     return(
-      <div id="shop">
+      <div className={this.props.classes.shop}>
         {this.renderItems()}
       </div>
     )
