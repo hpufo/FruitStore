@@ -2,10 +2,10 @@
 A fruit store built using React and Redux. The app get's it's stock from a json file.
 
 Technologies used:
-React
-Redux
-Redux-thunk
-Axios
+React,
+Redux,
+Redux-thunk,
+Axios,
 CSJS(For CSS in JS)
 
 Useful commands:
